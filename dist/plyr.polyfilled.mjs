@@ -12442,19 +12442,6 @@ function assurePlaybackState$1(play) {
   }
 }
 
-function getHost$1(config) {
-  if (config.noCookie) {
-    return 'https://www.youtube-nocookie.com';
-  }
-
-  if (window.location.protocol === 'http:') {
-    return 'http://www.youtube.com';
-  } // Use YouTube's default
-
-
-  return undefined;
-}
-
 var youtube = {
   setup: function setup() {
     var _this = this;
@@ -12560,7 +12547,6 @@ var youtube = {
 
     player.embed = new window.YT.Player(id, {
       videoId: videoId,
-      host: getHost$1(config),
       playerVars: extend({}, {
         autoplay: player.config.autoplay ? 1 : 0,
         // Autoplay
