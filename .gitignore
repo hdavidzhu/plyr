@@ -1,7 +1,6 @@
 !dist/blank.mp4
 .DS_Store
 .idea/
-.vscode/
 *.mp4
 *.webm
 credentials.json
