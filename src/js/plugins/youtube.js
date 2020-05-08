@@ -34,19 +34,6 @@ function assurePlaybackState(play) {
   }
 }
 
-function getHost(config) {
-  if (config.noCookie) {
-    return 'https://www.youtube-nocookie.com';
-  }
-
-  if (window.location.protocol === 'http:') {
-    return 'http://www.youtube.com';
-  }
-
-  // Use YouTube's default
-  return undefined;
-}
-
 const youtube = {
   setup() {
     // Add embed class for responsive
@@ -149,7 +136,6 @@ const youtube = {
     // https://developers.google.com/youtube/iframe_api_reference
     player.embed = new window.YT.Player(id, {
       videoId,
-      host: getHost(config),
       playerVars: extend(
         {},
         {
